@@ -1,0 +1,25 @@
+version: "3.5"
+
+services:
+  ecodms:
+    image: ecodms/allinone-18.09
+    restart: always
+    ports:
+      - 17001:17001
+      - 17004:8080
+      - 17005:8180
+    volumes:
+      - ${PWD}/data/ecodmsData:/srv/data
+      - ${PWD}/data/scaninput:/srv/scaninput
+      - /data/backup/ecodms-backup:/srv/backup
+      - /data/backup/ecodms-restore:/srv/restore
+    networks:
+      ecodms-network:
+
+networks:
+  ecodms-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.22.22.0/24
