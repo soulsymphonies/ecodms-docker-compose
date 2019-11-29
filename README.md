@@ -21,3 +21,19 @@ If you want to restore a backup then place one of the *.zip files that you have 
 Then restart the container with ```docker-compose down && docker-compose up -d``` and the restore will be performed
 
 **BUT BE AWARE,  this will overwrite *ALL DATA* in the ecodms container with the data from ```restore.zip```**
+
+## Ports
+Appliaction ports can also be adjusted to your likings by editing the ```ports:``` part in the docker-compose file
+- Port 17001 which is mapped to 17001 is the connection port for the ecodms Client software
+- Port 8080 which is mapped to 17004 is the web application connection port for the ecodms Web Client (this must be activated first in the application to be used
+- Port 8180 which is mapped to 17005 is the ecodms API connection port for API calls
+
+*Note: By default connections are not encrypted.*
+
+## Webclient / Reverse Proxy
+If you would like to run ecodms Webservice on your own server, e.g. in the cloud, I have attached a nginx reverse proxy configuration file, which you could edit to your likings and then place under ```/etc/nginx/sites-available```.
+Then you can link it to ```/etc/nginx/sites-enabled``` whenever you want to activate it.
+
+For example with this command: ```ln -s /etc/nginx/sites-available/ecodms-reverse-proxy.conf /etc/nginx/sites-enabled/ecodms```
+Nginx configuration can be tested via ```nginx -t```
+
