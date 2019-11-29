@@ -28,8 +28,9 @@ Appliaction ports can also be adjusted to your likings by editing the ```ports:`
 - Port 8080 which is mapped to 17004 is the web application connection port for the ecodms Web Client (this must be activated first in the application to be used
 - Port 8180 which is mapped to 17005 is the ecodms API connection port for API calls
 
-*Note: By default connections are not encrypted. If you want an encrypted connection to your cloud ecodms, you have to use some kind of VPN tunnel, for example Softether, OpenVPN, IPsec, etc., you could also use an SSL encrypted reverse proxy, as mentioned below to make a secure HTTPS connection to the ecodms Web Client*
+*Note: By default connections are not encrypted. 
 
+If you want an encrypted connection to your cloud ecodms, you have to use some kind of VPN tunnel, for example Softether, OpenVPN, IPsec, etc., you could also use an SSL encrypted reverse proxy, as mentioned below to make a secure HTTPS connection to the ecodms Web Client*
 
 ## Webclient / Reverse Proxy
 If you would like to run ecodms Webservice on your own server, e.g. in the cloud, I have attached a nginx reverse proxy configuration file, which you could edit to your likings and then place under ```/etc/nginx/sites-available```.
