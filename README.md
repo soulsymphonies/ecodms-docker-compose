@@ -37,3 +37,4 @@ Then you can link it to ```/etc/nginx/sites-enabled``` whenever you want to acti
 For example with this command: ```ln -s /etc/nginx/sites-available/ecodms-reverse-proxy.conf /etc/nginx/sites-enabled/ecodms```
 Nginx configuration can be tested via ```nginx -t```
 
+To make this work, you have to make sure that you have your own webserver certificates in place, maybe Let's Encrypt and you have to create the DH paramater file for nginx if it not already exists, instructions are in the comments of the file ```ecodms-reverse-proxy.conf```
